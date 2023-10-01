@@ -1,0 +1,196 @@
+@use './partials/global';
+@use './partials/mixins' as *;
+@use './partials/typography' as *;
+@use './partials/variables' as *;
+@use './partials/footer';
+@use './partials/header';
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-image: url(../assets/images/hero-shows.jpg);
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+    height: 45vh;
+    position: relative;
+
+    @include tablet {
+        height: 50vh;
+    }
+    @include desktop {
+        height: 55vh;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &__overlay{
+        background: $color-primary;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+        position: absolute;  
+    }
+
+    &__info{
+        z-index: 1;
+        @include desktop {
+            padding: 0 4rem;
+        }
+    }
+
+    &__subheader{
+        color: white;
+        padding: 0 2rem;
+        word-spacing: .3125rem;
+        @include desktop {
+            margin-top: 0;
+            padding: 0;
+        }
+    }
+    &__text {
+        color: white;
+        margin: 0;
+        padding: 0 2rem;
+        width: 80vw;
+    
+        word-spacing: .3125rem;
+
+        @include tablet {
+            width: 70vw;
+            line-height: 4.5rem;
+         }
+         @include desktop {
+             width: 36vw;
+             padding: 0rem;
+         }
+    }
+
+    &__track{
+        z-index: 1;
+        padding: 0 2rem;
+
+        @include tablet {
+           width: 55%;
+        }
+        @include desktop {
+            width: 30%;
+        }
+
+    }
+}
+
+.shows{
+    display: flex;
+    flex-direction: column;
+   
+    @include desktop {
+        padding: 0 10rem;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    &__heading{
+        padding: 1rem 2rem;
+        margin-bottom: 0;
+        color: $color-quaternary;
+    }
+}
+
+.card{
+    padding: 1rem 0;
+
+    &__content {
+        border-bottom: .0625rem solid $color-quinary;
+        padding-top: 2rem;
+
+        &:active {
+            background-color: $color-quinary;
+        }
+
+        &:hover{
+            background-color: $color-senary;
+        }
+
+        @include tablet {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+         }
+    }
+
+    @include desktop {
+        flex-grow: 2;
+        padding: 3rem;
+        display: flex;
+        flex-grow: 2;
+        flex-direction: column;
+    }
+   
+
+    &__datehead, &__venuehead, &__locationhead{
+        margin: 0;
+        padding: 0 0 0.5rem 2rem;
+        color: $color-tertiary;
+
+        @include tablet {
+            display: none;
+         }
+    }
+
+    &__content1{
+        display: none;
+
+        @include tablet {
+            display: flex;
+            height: 1rem;
+            width: 75%;
+        }
+
+    }
+
+    &__datehead1, &__venuehead1, &__locationhead1{
+        display: none;
+        @include tablet {
+            display: flex;
+            color: $color-tertiary;
+            width: 33%;
+            padding-left: 4rem;
+         }
+         @include desktop {
+            padding-left: 5rem;
+         }
+         
+    }
+    
+    
+   
+
+    &__date, &__venue, &__location{
+        margin-top: 0;
+        padding-left: 2rem;
+        color: $color-quaternary;
+    }
+        
+   
+   
+    &__button {
+        display: block;
+        margin: 1rem 2rem;
+        padding: 1rem;
+        background-color: $color-primary;
+        border: 1px solid $color-primary;
+        border-radius: 5px;
+        color: $color-secondary;
+        text-decoration: none;
+        text-align: center;
+
+        &:hover{
+            background-color: $color-quaternary;
+        }
+    }
+}
+
+

@@ -1,0 +1,356 @@
+@use './partials/global';
+@use './partials/mixins' as *;
+@use './partials/typography' as *;
+@use './partials/variables' as *;
+@use './partials/header';
+@use './partials/footer';
+
+.hero{
+    display: flex;
+    align-items: center;
+    background-image: url(../../assets/images/hero-bio.jpg);
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+    height: 35vh;
+    position: relative;
+
+    @include tablet {
+        height: 50vh;
+    }
+    @include desktop {
+        height: 55vh;
+    }
+
+    &__overlay{
+        background: $color-primary;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+        position: absolute;  
+    }
+
+    &__text {
+        margin: 2rem;
+        color: white;
+        align-items: center;
+        z-index: 1;
+
+        @include tablet {
+            padding-left: 3rem;
+        }
+        @include desktop {
+            padding-left: 8rem;   
+        }
+    }
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    background-color: $color-secondary;
+
+    &__title{
+        padding: 2rem 1rem 0 1rem;
+        margin-top: 1rem;
+
+        @include tablet{
+            padding: 2.5rem 3.5rem 0 3.5rem;
+        }
+
+        @include desktop {
+            padding: 2.5rem 3.5rem 0 3.5rem;   
+        }
+    }
+}
+
+.information{
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+        padding: 2rem 5rem;
+    }
+    @include desktop {
+       margin: 0 1rem;
+        padding: 2rem 6rem;
+    }
+    
+
+    &__img {
+        object-fit: cover;
+        height: 30vh;
+        padding: 0 1rem;
+        @include tablet {
+            height: 35vh;
+            padding: 0 3rem;
+
+       }
+        @include desktop{
+            height: 55vh;
+            padding: 0 4rem;
+        }
+    } 
+
+    &__words {
+        font-size: 1.5rem;
+        padding: 1rem;
+        margin: 0;
+
+        @include tablet {
+             padding: 1rem 3rem;
+        }
+
+        @include desktop{
+            padding: 1rem 4rem;
+        }
+    }
+
+    &__musician{
+        padding:0 1rem 1rem 1rem;
+        margin: 0;
+        @include tablet {
+            font-size: .875rem;
+            padding: 0 3rem;
+       }
+
+       @include desktop{
+           font-size: .875rem;
+           padding: 0 4rem;
+       }
+    }
+
+    &__bandname{
+        padding: 0 1rem;
+        margin: 1rem 0 0 0;
+    }
+
+    &__para{
+        @include tablet{
+            display: flex;
+        }
+        
+
+    } 
+
+    &__para1, &__para2 {
+        margin: 0;
+        padding: 1rem;
+        word-spacing: 0.3rem;
+        line-height: 1.5rem;
+        @include tablet{
+            font-size: .875rem;
+        }
+       
+    }
+
+}
+
+.gallery {
+    background-color: $color-senary; 
+    
+
+    &__heading {
+        padding: 1rem;
+        margin: 0;
+        @include tablet {
+            padding: 2.5rem 3.5rem 0 3.5rem;
+        }
+        @include desktop {
+            padding: 2.5rem 3.5rem 0 3.5rem;
+        }
+    }
+
+    &__images{
+        display: flex;  
+        flex-direction: column;
+
+        @include tablet {
+            flex-flow: row wrap;
+            padding: 2.5rem 3.5rem;
+        }
+        @include desktop {
+            flex-flow: row wrap;
+            padding: 2.5rem 3.5rem;
+        }
+    }
+    &__img {
+        object-fit: cover;
+        height: 27vh;
+        padding: 0 1rem 1rem 1rem;
+        filter: grayscale(1);
+        
+        @include tablet {
+            width: 33%;
+            height: 20vh;
+            
+        }
+        @include desktop {
+            width: 33%;
+            height: 22vh;
+        }
+
+        &:hover{
+            filter: grayscale(0);
+        }
+
+    }
+}
+
+.panel {
+    
+    &__title {
+        padding: 1rem;
+
+        margin: 0;
+        @include tablet {
+            padding: 2.5rem 3.5rem 0 3.5rem;
+        }
+        @include desktop {
+            padding: 2.5rem 3.5rem 0 3.5rem;
+        }
+    }
+}
+
+.commentpost {
+    display: flex;
+    padding: 1rem 0;
+    margin: 0 2rem;
+    border-bottom: .0625rem solid $color-tertiary;
+    @include tablet {
+        margin: 2rem 6rem;
+    }
+    @include desktop {
+        margin: 3rem 17rem;
+    }
+
+    &__thumbnail {
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 50%;
+        margin-top: 1.5rem;
+        background-image: "";
+        background: $color-quinary;
+        position: relative;
+
+        &::before {
+            content: '';
+            width: 2.25rem;
+            height: 2.25rem;
+            background-color: rgb(8, 8, 8);
+            border-radius: 50%;
+            position: absolute;
+            top: 10rem;
+            left: 3rem;
+            
+            //transform: translateY(-50%);
+        }
+    }
+
+
+}
+
+.comment-form {
+    margin: 0 4rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+   
+
+
+    &__button {
+        border: none;
+        background-color: $color-primary;
+        color: $color-secondary;
+        height: 2.5rem;
+        font-size: 1rem;
+        padding: 0.5rem 2rem;
+        border-radius: .25rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+        margin: 1rem 0;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $color-quaternary;
+        }
+        @include tablet {
+            margin-left: auto;
+            width: 10rem;
+        }
+    }
+
+    &__name  {
+        color: $color-tertiary;
+        padding-bottom: 0.5rem;
+    }
+
+    &__namebar{
+        
+        border: .0625rem solid $color-quinary;
+        height: 2.25rem;
+        border-radius: .25rem;
+        background-color: $color-senary;
+
+        &__:active {
+            border: .0625rem solid $color-primary;  
+        }
+
+    }
+
+    &__comment {
+        font-size: .875rem;
+        padding: 0.5rem 0;
+        color: $color-tertiary;
+       
+    }
+    &__commentbar{
+        border: .0625rem solid $color-quinary;
+        height: 4.25rem;
+        border-radius: .25rem;
+        background-color: $color-senary;
+        &__:active {
+            border: .0625rem solid $color-primary;  
+        }
+    }
+}
+
+.view {
+
+    
+
+    &__content {
+        padding: 1rem 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        border-bottom: .0625rem solid $color-quinary;
+        @include tablet {
+            margin: 2rem 6rem;
+        }
+        @include desktop {
+            margin: 3rem 17rem;
+        }
+    }
+    &__thumbnail {
+        width: 2.25rem;
+        height: 2.25rem;
+        border: 1px solid $color-quinary;
+        border-radius: 50%;
+        background-color: $color-quinary;
+    }
+    &__name {
+        padding-left: 1rem;
+    }
+    
+    &__date {
+        margin-left: auto;
+    }
+    &__remarks {
+        line-height: 2rem;
+    }
+    
+}
+
+
+

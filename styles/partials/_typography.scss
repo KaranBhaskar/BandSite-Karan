@@ -1,0 +1,90 @@
+@use './mixins' as *;
+
+@font-face {
+    font-family: 'avenir';
+    src:    url(../assets/fonts/font_woff_files/AvenirNextLTPro-Regular.woff2) format("woff2"),
+            url(../assets/fonts/font_woff_files/AvenirNextLTPro-Bold.woff) format("woff"),
+            url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("otf");
+}
+
+
+
+h1{
+    font-family: 'avenir';
+    font-size: 2rem;
+    line-height: 2rem; 
+    font-weight: 700;
+
+    @include tablet {
+        font-size: 3.75rem;
+        line-height: 4.25rem;
+    }
+}
+
+h2{
+    font-family: 'avenir';
+    font-size: 2.0rem;
+    line-height: 2rem;
+    font-weight: 700;
+
+    @include tablet {
+        font-size: 2.25rem;
+        line-height: 2.75rem;
+    }
+}
+
+h3{
+    font-family: 'avenir';
+    font-size: 1rem;
+    line-height: 1.375rem;
+    font-weight: 600;
+
+    @include tablet {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+   
+}
+
+h4 {
+    font-family: 'avenir';
+    font-size: .875rem;
+    line-height: 1.375rem;
+    font-weight: 600;
+
+    @include tablet {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    @include desktop {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+}
+
+a {
+    font-family: 'avenir';
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    @include tablet {
+        font-size: 1rem;
+        line-height: 2rem;
+    }
+    
+    
+}
+
+p {
+    font-family: 'avenir';
+    font-size: .875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    @include tablet {
+        font-size: .875rem;
+        line-height: 1.5rem;
+    }
+}
+
+
+
